@@ -1,43 +1,43 @@
-
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
 | Name         | AMAN JAIN                  |
-| Date         | 09/23/2000                 |
+| Date         | 09/23/2024                 |
 | Course       | Fall                       |
 | Assignment # | 1                          |
 
 # Assignment Overview
-This project implements an Automatic Beverage Vending Machine. It allows users to select a beverage from a set of available options and provides the ability to add condiments from a given list. The machine is capable of calculating the final bill based on the cost of the selected beverage and any additional condiments.
+
+This project implements a **Fully Automatic Beverage Vending Machine** that allows users to select from a variety of beverages and add condiments. It calculates the final cost based on the selected beverage and condiments. The machine brews various coffee drinks (Espresso, Americano, Latte Macchiato) and tea drinks (Black Tea, Green Tea, Yellow Tea).
 
 # GitHub Repository Link:
-[https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}](https://github.com/Aman23000/SDP_Assignemnt_1.git)
+[https://github.com/Aman23000/SDP_Assignment_1.git](https://github.com/Aman23000/SDP_Assignment_1.git)
 
-# Implementation Description 
-The project implementation involves two major classes that hold the core functionality. The first key class is the "Beverage" class, which is an abstract base class representing the attributes shared by various types of drinks. Derived from this class are two abstract classes, "Coffee" and "Tea", which serve as the base classes for more specific drink types. These abstract classes have several child classes, each representing a specific drink, and they implement the predefined properties and behaviors outlined in their parent classes.
+# Implementation Description
 
-As mentioned, the child classes inherit predefined properties from the parent class and can extend them through the "Tea" or "Coffee" subclasses.
+The project centers around two key classes: 
 
-The second major class is the "AutomaticBeverageVendingMachine" class, which contains key methods: "addCondiments", "calculateCostOfBeverage", and "brew".
+1. **Beverage**: This abstract base class defines common attributes for all beverages. It has two abstract subclasses:
+   - **Coffee**: For coffee drinks like Espresso, Americano, and Latte Macchiato.
+   - **Tea**: For tea drinks like Black Tea, Green Tea, and Yellow Tea.
 
-The "addCondiments" method takes three parameters:
-"beverage": an already existing beverage object.
-"condiments": the condiment (such as milk or sugar) to be added to the beverage.
-"qty": the quantity of units of the condiment to be added.
-The "brew" method is used to specify and create the desired beverage object, depending on the type of beverage requested.
-The "calculateCostOfBeverage" method takes a beverage object and calculates its total cost by adding the base cost of the beverage to the cost of the condiments (based on the number of units added). The base cost differs depending on whether the beverage is "Coffee" or "Tea".
+   Each drink type extends its respective abstract class and inherits predefined properties and behaviors.
 
-Flexibility in the Implementation:
-The implementation is highly flexible due to the use of abstract classes ("Beverage", "Coffee", and "Tea"). New beverages can easily be added by creating subclasses of "Coffee" or "Tea" without affecting existing code. The "brew" method can be extended to support new types without major changes.
+2. **AutomaticBeverageVendingMachine**: This class handles key operations, such as:
+   - **brew(String beverageName)**: Creates a specific beverage object based on the input.
+   - **addCondiments(Beverage beverage, String condiment, int qty)**: Adds condiments like milk or sugar to the selected beverage, with a maximum of 3 units per condiment.
+   - **calculateCostOfBeverage(Beverage beverage)**: Calculates the total cost by adding the base cost of the beverage to the cost of the condiments.
 
-Simplicity and Understandability:
-The code is simple and easy to understand due to clear method names like "brew", "addCondiments", and "calculateCostOfBeverage". The use of abstraction and inheritance keeps each class focused on a single responsibility, making the code easier to maintain and extend.
+### Flexibility
+The design is flexible because new beverages can be easily added by extending the **Coffee** or **Tea** classes. The **brew** method can be extended to support new drink types without requiring major changes.
 
-Avoidance of Duplicated Code:
-Duplication is avoided by centralizing common functionality in the "Beverage" class, which defines shared properties and methods for all beverages. This allows changes to be made in one place, improving maintainability and reducing bugs.
+### Simplicity and Understandability
+The code is straightforward, with clear method names like **brew**, **addCondiments**, and **calculateCostOfBeverage**, making it easy to maintain. Each class has a focused responsibility, which improves readability.
 
-Design Patterns:
-The Factory Method pattern is used in the "brew" method, allowing the creation of different beverages based on input. This decouples the vending machine from specific beverage types, making it easy to extend or modify in the future.
+### Avoidance of Duplicated Code
+Code duplication is avoided by centralizing common logic in the **Beverage** class. This ensures that shared attributes (e.g., milk, sugar, cost) are defined in one place and inherited by all subclasses, improving maintainability and reducing bugs.
 
+### Design Patterns
+The project uses the **Factory Method** pattern in the **brew** method. This pattern allows the **AutomaticBeverageVendingMachine** to create different beverage objects based on user input, making the system easy to extend with new beverages in the future.
 
 # Maven Commands
 
