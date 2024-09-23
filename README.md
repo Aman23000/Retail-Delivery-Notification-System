@@ -1,13 +1,13 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | AMAN JAIN                  |
+| Date         | 09/23/2000                 |
+| Course       | Fall                       |
+| Assignment # | 1                          |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+This project implements an Automatic Beverage Vending Machine. It allows users to select a beverage from a set of available options and provides the ability to add condiments from a given list. The machine is capable of calculating the final bill based on the cost of the selected beverage and any additional condiments.
 
 # GitHub Repository Link:
 https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
