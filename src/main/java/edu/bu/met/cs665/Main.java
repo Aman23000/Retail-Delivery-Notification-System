@@ -14,9 +14,6 @@ import edu.bu.met.cs665.models.Beverage;
 public class Main {
   /**
    * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final project requires JUnit tests.
    */
   public static void main(String[] args) {
     // Testing main methods created for this project.
