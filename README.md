@@ -1,44 +1,55 @@
-
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | AMAN JAIN                  |
+| Date         | 09/23/2024                 |
+| Course       | Fall                       |
+| Assignment # | 1                          |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+
+This project implements a **Fully Automatic Beverage Vending Machine** that allows users to select from a variety of beverages and add condiments. It calculates the final cost based on the selected beverage and condiments. The machine brews various coffee drinks (Espresso, Americano, Latte Macchiato) and tea drinks (Black Tea, Green Tea, Yellow Tea).
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+[https://github.com/Aman23000/SDP_Assignment_1.git](https://github.com/Aman23000/SDP_Assignment_1.git)
 
-# Implementation Description 
+# Implementation Description
 
+The project centers around two key classes: 
 
-For each assignment, please answer the following:
+1. **Beverage**: This abstract base class defines common attributes for all beverages. It has two abstract subclasses:
+   - **Coffee**: For coffee drinks like Espresso, Americano, and Latte Macchiato.
+   - **Tea**: For tea drinks like Black Tea, Green Tea, and Yellow Tea.
 
-- Explain the level of flexibility in your implementation, including how new object types can
-be easily added or removed in the future.
-- Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-chosen.
+   Each drink type extends its respective abstract class and inherits predefined properties and behaviors.
 
+2. **AutomaticBeverageVendingMachine**: This class handles key operations, such as:
+   - **brew(String beverageName)**: Creates a specific beverage object based on the input.
+   - **addCondiments(Beverage beverage, String condiment, int qty)**: Adds condiments like milk or sugar to the selected beverage, with a maximum of 3 units per condiment.
+   - **calculateCostOfBeverage(Beverage beverage)**: Calculates the total cost by adding the base cost of the beverage to the cost of the condiments.
+
+### Flexibility
+The design is flexible because new beverages can be easily added by extending the **Coffee** or **Tea** classes. The **brew** method can be extended to support new drink types without requiring major changes.
+
+### Simplicity and Understandability
+The code is straightforward, with clear method names like **brew**, **addCondiments**, and **calculateCostOfBeverage**, making it easy to maintain. Each class has a focused responsibility, which improves readability.
+
+### Avoidance of Duplicated Code
+Code duplication is avoided by centralizing common logic in the **Beverage** class. This ensures that shared attributes (e.g., milk, sugar, cost) are defined in one place and inherited by all subclasses, improving maintainability and reducing bugs.
+
+### Design Patterns
+The project uses the **Factory Method** pattern in the **brew** method. This pattern allows the **AutomaticBeverageVendingMachine** to create different beverage objects based on user input, making the system easy to extend with new beverages in the future.
 
 # Maven Commands
 
-We'll use Apache Maven to compile and run this project. You'll need to install Apache Maven (https://maven.apache.org/) on your system. 
+We’ll use Apache Maven to compile and run this project. You can install it from https://maven.apache.org/.
 
-Apache Maven is a build automation tool and a project management tool for Java-based projects. Maven provides a standardized way to build, package, and deploy Java applications.
+Apache Maven is a powerful build automation and project management tool for Java projects. It offers a standardized approach to build, package, and deploy applications.
 
-Maven uses a Project Object Model (POM) file to manage the build process and its dependencies. The POM file contains information about the project, such as its dependencies, the build configuration, and the plugins used for building and packaging the project.
+Maven uses a Project Object Model (POM) file to manage builds and dependencies. The POM file includes details about the project, such as its dependencies, build configurations, and the plugins used for tasks like packaging and testing.
 
-Maven provides a centralized repository for storing and accessing dependencies, which makes it easier to manage the dependencies of a project. It also provides a standardized way to build and deploy projects, which helps to ensure that builds are consistent and repeatable.
+Maven simplifies dependency management by using a centralized repository, making it easier to handle external libraries. It also ensures consistent and repeatable builds across different environments.
 
-Maven also integrates with other development tools, such as IDEs and continuous integration systems, making it easier to use as part of a development workflow.
-
-Maven provides a large number of plugins for various tasks, such as compiling code, running tests, generating reports, and creating JAR files. This makes it a versatile tool that can be used for many different types of Java projects.
+Maven integrates well with IDEs and continuous integration tools, streamlining its use in the development workflow. Additionally, it has a wide range of plugins for tasks like compiling code, running tests, generating reports, and creating JAR files, making it highly versatile for Java projects.
 
 ## Compile
 Type on the command line: 
@@ -47,18 +58,16 @@ Type on the command line:
 mvn clean compile
 ```
 
-
-
 ## JUnit Tests
-JUnit is a popular testing framework for Java. JUnit tests are automated tests that are written to verify that the behavior of a piece of code is as expected.
+JUnit is a widely used testing framework for Java, designed to automate the testing process and verify that code behaves as expected.
 
-In JUnit, tests are written as methods within a test class. Each test method tests a specific aspect of the code and is annotated with the @Test annotation. JUnit provides a range of assertions that can be used to verify the behavior of the code being tested.
+In JUnit, tests are written as methods within a test class, with each method testing a specific functionality. These methods are marked with the @Test annotation. JUnit offers various assertions to validate the behavior of the code being tested.
 
-JUnit tests are executed automatically and the results of the tests are reported. This allows developers to quickly and easily check if their code is working as expected, and make any necessary changes to fix any issues that are found.
+JUnit tests are run automatically, with results reported to help developers quickly identify and fix issues. This makes it easy to ensure that the code works as intended.
 
-The use of JUnit tests is an important part of Test-Driven Development (TDD), where tests are written before the code they are testing is written. This helps to ensure that the code is written in a way that is easily testable and that all required functionality is covered by tests.
+JUnit plays a key role in Test-Driven Development (TDD), where tests are written before the actual code. This approach ensures that the code is testable and that all functionality is covered by tests.
 
-JUnit tests can be run as part of a continuous integration pipeline, where tests are automatically run every time changes are made to the code. This helps to catch any issues as soon as they are introduced, reducing the need for manual testing and making it easier to ensure that the code is always in a releasable state.
+JUnit tests can also be integrated into a continuous integration (CI) pipeline, where they are executed automatically with each code change. This helps catch issues early, reduces the need for manual testing, and ensures the code is always in a releasable state.
 
 To run, use the following command:
 ```bash
