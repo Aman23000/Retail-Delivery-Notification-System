@@ -1,16 +1,4 @@
-| CS-665       | Software Design & Patterns |
-|--------------|----------------------------|
-| Name         | AMAN JAIN                  |
-| Date         | 09/23/2024                 |
-| Course       | Fall                       |
-| Assignment # | 1                          |
-
-# Assignment Overview
-
 This project implements a **Fully Automatic Beverage Vending Machine** that allows users to select from a variety of beverages and add condiments. It calculates the final cost based on the selected beverage and condiments. The machine brews various coffee drinks (Espresso, Americano, Latte Macchiato) and tea drinks (Black Tea, Green Tea, Yellow Tea).
-
-# GitHub Repository Link:
-[https://github.com/Aman23000/SDP_Assignment_1.git](https://github.com/Aman23000/SDP_Assignment_1.git)
 
 # Implementation Description
 
